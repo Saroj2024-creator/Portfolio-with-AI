@@ -26,8 +26,23 @@ const Navbar = () => {
             whileTap={{ scale: 0.95 }}
             className="flex items-center"
           >
-            <Link to="/" className="text-xl font-bold text-gray-900">
-              SK
+            <Link 
+              to="/" 
+              className="relative group flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-r from-gray-900 to-gray-700 text-white font-bold text-lg overflow-hidden"
+            >
+              <span className="relative z-10">SK</span>
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                animate={{
+                  scale: [1, 1.2, 1],
+                  rotate: [0, 360],
+                }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  ease: "linear",
+                }}
+              />
             </Link>
           </motion.div>
           
