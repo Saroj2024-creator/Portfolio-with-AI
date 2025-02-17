@@ -56,6 +56,12 @@
   }
 }
 
+@layer utilities {
+  .animate-spin-slow {
+    animation: spin 8s linear infinite;
+  }
+}
+
 /* Animations */
 .animate-float {
   animation: float 6s ease-in-out infinite;
@@ -77,9 +83,10 @@
 .animate-gradient {
   background: linear-gradient(
     to right,
-    #1a1a1a 20%,
-    #4a4a4a 30%,
-    #1a1a1a 70%
+    #ec4899,
+    #8b5cf6,
+    #6366f1,
+    #ec4899
   );
   -webkit-background-clip: text;
   background-clip: text;
@@ -100,4 +107,34 @@
 /* Smooth transition for all elements */
 * {
   @apply transition-all duration-300 ease-in-out;
+}
+
+/* Enhanced glassmorphism */
+.glass-effect {
+  @apply bg-white/10 backdrop-blur-lg border border-white/20;
+  box-shadow: 
+    0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.1);
+}
+
+/* Shimmering effect */
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.2) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: -100% 0;
+  }
 }
